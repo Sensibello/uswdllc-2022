@@ -4,10 +4,23 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   padding: env(safe-area-inset);
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
   @apply transition-colors duration-200 ease-in-out;
+}
+
+.bg-blue {
+  background-color: var(--color-dark-blue);
+  background: var(--color-dark-blue);
+  color: #fff;
+}
+
+.testimonial-item {
+  border-left: 12px solid var(--color-red);
+  margin: 10px;
 }

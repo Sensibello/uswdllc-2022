@@ -1,6 +1,12 @@
 <template>
-  <div class="fixed bottom-0 left-0 m-3">
-    <component :is="`icon-${color}`" @click="changeColorMode" @keypress.enter="changeColorMode" title="Toggle background color" tabindex="0" />
+  <div class="fixed bottom-0 left-0 m-3 color-mode">
+    <component
+      :is="`icon-${color}`"
+      @click="changeColorMode"
+      @keypress.enter="changeColorMode"
+      title="Toggle background color"
+      tabindex="0"
+    />
   </div>
 </template>
 
@@ -15,11 +21,11 @@ export default {
   components: {
     IconSystem,
     IconLight,
-    IconDark
+    IconDark,
   },
   data() {
     return {
-      color: COLOR_MODE_FALLBACK
+      color: COLOR_MODE_FALLBACK,
     }
   },
   watch: {
@@ -34,8 +40,8 @@ export default {
         } else {
           this.color = COLOR_MODE_FALLBACK
         }
-      }
-    }
+      },
+    },
   },
   methods: {
     changeColorMode() {
@@ -52,12 +58,16 @@ export default {
         default:
           return (this.$colorMode.preference = COLOR_MODE_FALLBACK)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="postcss" scoped>
+.color-mode {
+  display: none;
+}
+
 .icon {
   width: 44px;
   height: 44px;
@@ -86,5 +96,4 @@ export default {
     }
   }
 }
-
 </style>
