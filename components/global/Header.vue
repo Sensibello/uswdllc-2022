@@ -1,271 +1,178 @@
 <template>
   <header class="w-full flex flex-wrap items-center justify-between">
-    <div
-      id="banner"
-      tabindex="-1"
-      class="
-        flex
-        z-50
-        gap-8
-        justify-center
-        items-start
-        py-3
-        px-4
-        w-full
-        bg-gray-50
-        border border-b border-gray-200
-        sm:items-center
-        dark:border-gray-700
-        lg:py-4
-        bg-gray-800
-      "
-    >
-      <p class="text-sm font-light text-white">Contact us today to get a free estimate!</p>
-      <a
-        class="flex items-center hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm cta-button"
-        href="tel:440-285-4357"
+      <div
+        id="banner"
+        tabindex="-1"
+        class="
+          flex
+          gap-8
+          justify-center
+          items-center
+          py-3
+          px-4
+          w-full
+          bg-gray-50
+          border border-b border-gray-200
+          sm:items-center
+          dark:border-gray-700
+          lg:py-4
+          bg-gray-800
+        "
       >
-        Call us now
-      </a>
-    </div>
-
-    <!-- Navbar -->
-    <nav
-      class="
-        navbar navbar-expand-lg
-        shadow-md
-        py-2
-        px-6
-        bg-white
-        relative
-        flex
-        items-center
-        w-full
-        justify-between
-        scrim-bg
-        fixed
-        z-40
-        top-0
-        inset-x-0
-        pt-3
-        px-3
-      "
-      aria-label="Main Menu"
-    >
-      <div class="px-6 w-full flex flex-wrap items-center justify-between">
+        <p class="text-sm font-light text-white">Contact us today to get a free estimate!</p>
         <a
-          class="flex items-center text-gray-900 hover:text-gray-900 focus:text-gray-900 mt-2 lg:mt-0 mr-1 logo-link"
-          href="#"
+          class="flex items-center hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm cta-button"
+          href="tel:440-285-4357"
         >
-          <img src="~/assets/images/logo.png" class="logo-img" alt="" loading="lazy" />
+          Call us now
         </a>
-
-        <div class="flex items-center">
-          <button
-            class="
-              navbar-toggler
-              border-0
-              py-3
-              lg:hidden
-              leading-none
-              text-xl
-              bg-transparent
-              text-gray-600
-              hover:text-gray-700
-              focus:text-gray-700
-              transition-shadow
-              duration-150
-              ease-in-out
-              mr-2
-            "
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContentY"
-            aria-controls="navbarSupportedContentY"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+      </div>
+  <div
+    class="w-full"
+    :class="{ 'absolute w-full h-screen toppy left-0': menu }"
+  >
+    <div class="mobiley w-full justify-between  md:mx-auto flex flex-wrap">
+      <div class="w-auto p-3">
+        <!-- Title -->
+        <a href="/" class="flex items-center">
+            <img src="~/assets/images/logo.png" class="mr-3 logo-img" alt="USWDLLC Logo" />
+            <span class="sr-only">USWDLLC </span>
+        </a>
+        <!-- Icon -->
+       
+      </div>
+      <!-- Desktop nav list -->
+      <nav class="hidden lg:block">
+        <ul class="flex">
+          <li
+            v-for="(item, index) in items"
+            :key="index"
           >
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              class="w-5"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
+            <a
+              :href="item.href"
+              class="hover:underline p-6 block"
             >
-              <path
-                fill="currentColor"
-                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
-          <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
-            <li class="nav-item">
-              <nuxt-link
-                class="
-                  nav-link
-                  block
-                  pr-2
-                  lg:px-2
-                  py-2
-                  text-gray-600
-                  hover:text-gray-700
-                  focus:text-gray-700
-                  transition
-                  duration-150
-                  ease-in-out
-                "
-                to="/home"
-                >Home</nuxt-link
-              >
-            </li>
-            <li class="nav-item">
-              <nuxt-link
-                class="
-                  nav-link
-                  block
-                  pr-2
-                  lg:px-2
-                  py-2
-                  text-gray-600
-                  hover:text-gray-700
-                  focus:text-gray-700
-                  transition
-                  duration-150
-                  ease-in-out
-                "
-                to="/services"
-                >Services</nuxt-link
-              >
-            </li>
-            <li class="nav-item">
-              <nuxt-link
-                class="
-                  nav-link
-                  block
-                  pr-2
-                  lg:px-2
-                  py-2
-                  text-gray-600
-                  hover:text-gray-700
-                  focus:text-gray-700
-                  transition
-                  duration-150
-                  ease-in-out
-                "
-                to="/about"
-                >Who We Are</nuxt-link
-              >
-            </li>
-            <li class="nav-item mb-2 lg:mb-0">
-              <nuxt-link
-                class="
-                  nav-link
-                  block
-                  pr-2
-                  lg:px-2
-                  py-2
-                  text-gray-600
-                  hover:text-gray-700
-                  focus:text-gray-700
-                  transition
-                  duration-150
-                  ease-in-out
-                "
-                to="/projects"
-                >Our Work</nuxt-link
-              >
-            </li>
-            <li class="nav-item mb-2 lg:mb-0">
-              <nuxt-link
-                class="
-                  nav-link
-                  block
-                  pr-2
-                  lg:px-2
-                  py-2
-                  text-gray-600
-                  hover:text-gray-700
-                  focus:text-gray-700
-                  transition
-                  duration-150
-                  ease-in-out
-                "
-                to="/provia-portal"
-                >Provia Portal</nuxt-link
-              >
-            </li>
-            <li class="nav-item mb-2 lg:mb-0">
-              <nuxt-link
-                class="
-                  nav-link
-                  block
-                  pr-2
-                  lg:px-2
-                  py-2
-                  hover:text-gray-700
-                  focus:text-gray-700
-                  transition
-                  duration-150
-                  ease-in-out
-                  cta-button
-                  rounded-lg
-                "
-                to="/contact"
-                >Contact</nuxt-link
-              >
-            </li>
-          </ul>
+              {{ item.title }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Toggle menu mobile icon -->
+        <div
+          class="toggler ml-auto lg:hidden p-6"
+          @click="menu = !menu"
+        >
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
         </div>
       </div>
+      <!-- Mobile nav list -->
+      <nav v-show="menu" class="w-full dropping">
+        <ul class="flex flex-col text-center">
+        <li
+          v-for="(item, index) in items"
+          :key="index"
+        >
+          <a
+            :href="item.href"
+            class="bg-white p-6 block"
+          >
+            {{ item.title }}
+          </a>
+        </li>
+      </ul>
     </nav>
-    <!-- Navbar -->
+  </div>
   </header>
+
 </template>
+
 
 <script>
 export default {
-  name: 'Header',
+  data() {
+    return {
+      menu: false,
+      items: [
+        {
+          title: 'Home',
+          href: '/'
+        },
+        {
+          title: 'About',
+          href: '/about'
+        },
+        {
+          title: 'Services',
+          href: '/services'
+        },
+        {
+          title: 'Our Work',
+          href: '/our-work'
+        },
+        {
+          title: 'Provia Portal',
+          href: '/provia-portal'
+        },
+        {
+          title: 'Contact',
+          href: '/contact'
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="postcss" scoped>
-.scrim-bg {
+
+nav {
+  li:last-child {
+    background: #b22222;
+    padding: 9px 18px;
+    color: white;
+    border-radius: 5px;
+  }
 }
-.nuxt-link-exact-active {
-  @apply text-gray-200 border-gray-400 bg-gray-800 bg-opacity-25 cursor-default;
+.toggler {
+  background: #eee;
 }
 
-.light {
-  & .scrim-bg {
-    &::after {
-      animation-name: fadeIn2;
-      background: linear-gradient(to bottom, #e5e7eb, cubic-bezier(0.15, 0, 0.45, 1), transparent);
-    }
+.logo-img {
+  width: 100%;
+  max-width: 390px;
+}
+.mobiley {
+  background: #fff;
+  background: #fff;
+  box-shadow: 9px 3px 4px #eee;
+}
+
+.toppy {
+  top: 65px;
+}
+
+@media (max-width: 600px) {
+  .logo-img {
+  width: 100%;
+  max-width: 290px;
+}
+  .mobiley {
+    border-bottom: solid 2px #2C3A57;
   }
-  & .nuxt-link-exact-active {
-    @apply text-primary-700 border-gray-600 bg-gray-100;
+
+  .logo-img {
+    width: 100%;
+    max-width: 290px;
+  }
+
+  .dropping {
+    box-shadow: 10px 10px 5px #ccc;
+      ul {
+        li {
+          border-bottom: 1px solid #eee;
+        }
+      }
   }
 }
 
-/* Need two because of smoother switching between color modes */
-@keyframes fadeIn1 {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn2 {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 </style>
